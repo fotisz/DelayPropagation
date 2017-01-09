@@ -1,33 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
 
 <!-- ============== CSS ===================== -->
     <title>Simulation</title>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/slider.css">
     <link rel="stylesheet" href="styles/style.css">
 
-  </head>
+
+</head>
 
 <!-- ============== BODY =================== -->
 
-  <body>
-
-  <div id="main"></div>
-
-  <div class="tooltip"></div>
+<body>
 
 
+  <div class="container">
+
+    <button id="pause" class="btn btn-lg btn-warning">Pause</button>
+    <button id="reset" class="btn btn-lg btn-danger">Reset</button>
+
+    <div id = "roadCircle">
+      <div id="main" ></div>
+    </div>
+
+    <div class="chart">
+      <div id="velocity"></div>
+      <div id="road"></div>
+      <div style="margin-left: 40px; margin-bottom:5px">Time Slider</div>
+      <div id="slider1" style="margin-bottom: 40px"></div>
+    </div style="">
+
+  </div>
+
+
+
+  <div id="sticker1" class="sticker" style="opacity: 0;">
+    <svg width="60.78429"  height="26.852531" viewBox="0 0 60.78429 26.85253">
+    <g id="car">
+<path
+   d="M 60.305562,10.535 48.492694,8.8979996 45.757389,-3.8766301e-7 l -20.857001,0 L 20.391999,9.8189996 1.4916526,11.456 0,24.445 l 4.3187416,0 c 0.29602,-4.882 2.799736,-8.694 5.8456504,-8.694 3.045305,0 5.549021,3.812 5.845041,8.694 l 26.91722,0 c 0.296021,-4.882 2.799736,-8.694 5.845042,-8.694 3.031933,0 5.527138,3.778 5.841394,8.628 l 5.318648,-1.264 c 0.0012,0.001 1.636928,-10.099 0.373825,-12.58 z m -26.407238,0.23 -10.496086,0 4.085937,-8.8980004 6.410149,0 z m 3.134848,0 0,-8.8990004 5.894696,0 2.735913,8.8980004 c 0,0 -5.471362,0.190393 -8.630609,0 -3.33e-4,-2e-5 0,0.001 0,0.001 z"
+   id="path3"
+   inkscape:connector-curvature="0"
+   sodipodi:nodetypes="ccccccccsccsccccccccccccsc" />
+
+
+<path
+   d="m 10.054902,17.506593 c -2.5569618,0 -4.6249999,2.068038 -4.6249999,4.625 0,2.556962 2.0680381,4.65625 4.6249999,4.65625 2.556962,0 4.625,-2.099288 4.625,-4.65625 0,-2.556962 -2.068038,-4.625 -4.625,-4.625 z m 0,2.90625 c 0.961699,0 1.75,0.757051 1.75,1.71875 0,0.961699 -0.788301,1.75 -1.75,1.75 -0.9616987,0 -1.7499999,-0.788301 -1.7499999,-1.75 0,-0.961699 0.7883012,-1.71875 1.7499999,-1.71875 z"
+   id="path2984"
+   inkscape:connector-curvature="0" />
+
+   <path
+   inkscape:connector-curvature="0"
+   id="path3760"
+   d="m 48.702755,17.506593 c -2.556962,0 -4.625,2.068038 -4.625,4.625 0,2.556962 2.068038,4.65625 4.625,4.65625 2.556962,0 4.625,-2.099288 4.625,-4.65625 0,-2.556962 -2.068038,-4.625 -4.625,-4.625 z m 0,2.90625 c 0.961699,0 1.75,0.757051 1.75,1.71875 0,0.961699 -0.788301,1.75 -1.75,1.75 -0.961699,0 -1.75,-0.788301 -1.75,-1.75 0,-0.961699 0.788301,-1.71875 1.75,-1.71875 z"/>
+       </g>
+    </svg>
+  </div>
 
   </body>
 
 <!-- ============== LIBRARIES =================== -->
-
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="libraries/underscore.min.js"></script>    
     <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="libraries/sticker.js"></script>    
+    <script src="libraries/slider.js"></script>    
+
 
 <!-- ============== SCRIPTS =================== -->
 
     <script src="scripts/sim.js"></script>
+    <script src="scripts/chart.js"></script>
 
 </html>
+
