@@ -94,12 +94,12 @@ var numCars = 20,
       
   var y = d3.scale.linear()
   		.domain([-7,1.5])
-  		.range([0,radius + 50])
+  		.range([0,radius + 80])
   		.clamp(true);
 
   var offset = 20;    
 
-  var interiorGap = 107;
+  var interiorGap = 50;
 
   var roadMaker = d3.svg.arc()
   	.innerRadius(radius-20)
