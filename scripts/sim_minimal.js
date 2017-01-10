@@ -95,7 +95,7 @@ var numCars = 20,
   		.range([0,radius + 40])
   		.clamp(true);
 
-  var offset = 20;    
+  var offset = 30;    
 
   var interiorGap = 40;
 
