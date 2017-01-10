@@ -45,7 +45,7 @@
 var margin = {top: 0, right: 20, bottom: 0, left: 20},
     width = 400 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
-    radius = (width-80)/2,
+    radius = (width-120)/2,
     center = {x: width/2, y: height/2},
     durPerm = 45,
     dur = 45;
@@ -102,8 +102,8 @@ var numCars = 20,
   var interiorGap = 107;
 
   var roadMaker = d3.svg.arc()
-  	.innerRadius(radius-50)
-  	.outerRadius(radius+50)
+  	.innerRadius(radius-20)
+  	.outerRadius(radius+20)
   	.startAngle(0)
   	.endAngle(2*Math.PI);
 
