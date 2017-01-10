@@ -97,11 +97,11 @@ var numCars = 20,
 
   var offset = 30;    
 
-  var interiorGap = 40;
+  var interiorGap = 30;
 
   var roadMaker = d3.svg.arc()
-  	.innerRadius(radius-20)
-  	.outerRadius(radius+20)
+  	.innerRadius(radius-15)
+  	.outerRadius(radius+15)
   	.startAngle(0)
   	.endAngle(2*Math.PI);
 
