@@ -73,7 +73,7 @@ var numCars = 20,
 
 	var color = d3.scale.pow().exponent(0.8)
 	    .domain([0,vo*0.7]) //domain of input data 1 to 38
-      .range(["#2980b9", "#ecf0f1"])  //the color range
+		.range(["#2980b9", "#ecf0f1"])  //the color range
 	    .interpolate(d3.interpolateHcl);
 
   var posColorAcc = d3.scale.pow().exponent(0.4)
@@ -94,7 +94,7 @@ var numCars = 20,
       
   var y = d3.scale.linear()
   		.domain([-7,1.5])
-  		.range([0,radius + 110])
+  		.range([0,radius + 50])
   		.clamp(true);
 
   var offset = 20;    
