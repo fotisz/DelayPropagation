@@ -1,6 +1,11 @@
     body {
-      font: 10px sans-serif;
-    }
+      font-family: 'Open Sans', sans-serif;
+          }
+
+
+/*  text{
+      font: 'Open Sans';
+  }*/
 
     .axis path,
     .axis line {
@@ -9,15 +14,23 @@
       shape-rendering: crispEdges;
     }
 
+  .d3-slider-handle{
+    border: 1px solid #737373;
+    border-radius: 4px;
+    background: #eee;
+    background: linear-gradient(to bottom, #BBBBBB 0%, #565656 100%);
+
+  }
+
+/*    #pause{
+      background-color: #DDD;
+    }*/
+
     .line {
       fill: none;
-      stroke: steelblue;
       stroke-width: 2px;
     }
 
-    text{
-      font-size: 16px;
-    }
 
     .A{
       stroke: #e74c3c;
@@ -40,10 +53,27 @@
       padding: 40px;
     }
 
+/*
     .legend text{
       fill: white;
+    }*/
+
+
+    div.tooltip {   
+      position: absolute;           
+      text-align: center;           
+      padding: 15px;             
+      background: #666;   
+      border: 0px;    
+      color: white;
+      font-family: "Open Sans";  
+      border-radius: 6px;           
+      pointer-events: none;   
+      font-size: 14px;      
     }
 
+
+/*
     .tooltip{
       -webkit-transition-delay: 0s;
     -webkit-transition-duration: 0.15s;
@@ -52,10 +82,8 @@
     box-sizing: border-box;
     color: rgb(52, 73, 94);
     display: block;
-    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
     height: 140px;
-    /*left: -8px;*/
     line-height: 19px;
     margin-top: -3px;
     opacity: 1;
@@ -87,14 +115,12 @@
     box-sizing: border-box;
     color: rgb(52, 73, 94);
     display: block;
-    /*font-family: Lato, Helvetica, Arial, sans-serif;*/
     font-size: 14px;
     height: 9px;
     left: 106.25px;
     line-height: 19px;
     margin-left: -9px;
     position: absolute;
-    /*visibility: visible;*/
     width: 18px;
     }
 
@@ -107,9 +133,7 @@
       box-sizing: border-box;
       color: rgb(255, 255, 255);
       display: inline-block;
-      /*font-family: Lato, Helvetica, Arial, sans-serif;*/
       font-size: 14px;
-      /*height: 96px;*/
       line-height: 18px;
       max-width: 200px;
       padding-bottom: 12px;
@@ -118,6 +142,9 @@
       padding-top: 12px;
       text-align: center;
       text-decoration: none;
-      /*visibility: visible;*/
-      /*width: 135px;*/
     }
+*/
+
+.car{
+  cursor: pointer;
+}
