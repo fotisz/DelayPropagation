@@ -95,9 +95,9 @@ var numCars = 20,
   		.range([0,radius + 40])
   		.clamp(true);
 
-  var offset = 0;    
+  var offset = 20;    	//centralize icon
 
-  var interiorGap = 0;
+  var interiorGap = 25; //gap between neg and positive
 
   var roadMaker = d3.svg.arc()
   	.innerRadius(radius-15)
