@@ -95,9 +95,9 @@ var numCars = 20,
   		.range([0,radius + 40])
   		.clamp(true);
 
-  var offset = 30;    
+  var offset = 0;    
 
-  var interiorGap = 30;
+  var interiorGap = 0;
 
   var roadMaker = d3.svg.arc()
   	.innerRadius(radius-15)
