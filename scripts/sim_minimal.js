@@ -95,7 +95,7 @@ var numCars = 20,
   		.range([0,radius + 40])
   		.clamp(true);
 
-  var offset = 20;    	//centralize icon
+  var offset = 25;    	//centralize icon
 
   var interiorGap = 25; //gap between neg and positive
 
@@ -123,8 +123,8 @@ var numCars = 20,
       });
 
   var arcInner = d3.svg.arc()
-      .innerRadius(radius - 25)
-      .outerRadius(radius + 25)
+      .innerRadius(radius - 30)
+      .outerRadius(radius + 30)
       .startAngle(function(d){
       	return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.002) * toRads;
       })
