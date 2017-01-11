@@ -92,7 +92,7 @@ var numCars = 20,
       
   var y = d3.scale.linear()
   		.domain([-7,1.5])
-  		.range([0,radius + 40])
+  		.range([0,radius + 400])
   		.clamp(true);
 
   var offset = 25;    	//centralize icon
