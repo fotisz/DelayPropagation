@@ -169,7 +169,7 @@ road.on('mousemove', function(){
 		});
 
 road.append("foreignObject")
-	.attr("transform","translate(" + (center.x + - 150/2) +  "," + ( center.y +  - 50/2) + ")" )
+	.attr("transform","translate(" + (center.x + - 100/2) +  "," + ( center.y +  - 45/2) + ")" )
 	.attr("width", 200)
 	.attr("height", 200)
 	.append("xhtml:div")
@@ -180,16 +180,17 @@ road.append("foreignObject")
 	})
 
 //=============DRAW LEGEND===============
+	
 // ["#e74c3c", "#2ecc71"]
-	var legendData = [
-		{name: "deceleration (braking)", color: "#e74c3c", type: "rect"},
-		{name: "acceleration (speeding up)", color: "#2ecc71", type: "rect"}
-	]
+var legendData = [
+	{name: "deceleration (braking)", color: "#e74c3c", type: "rect"},
+	{name: "acceleration (speeding up)", color: "#2ecc71", type: "rect"}
+]
 
-	var legend = svg.selectAll(".legend")
-	    .data(legendData)
-	  .enter().append("g")
-	    .attr("class", "legend")
+var legend = svg.selectAll(".legend")
+	.data(legendData)
+	.enter().append("g")
+.attr("class", "legend")
 	    .attr("transform", function(d, i) { return "translate(" +width + "," + i * 25 + ")"; });
 
 	legend.append("rect")
