@@ -172,7 +172,7 @@ var numCars = 20,
 	    .attr("width", 200)
 	    .attr("height", 200)
 	  .append("xhtml:div")
-	    .html('<button id="slow" class="btn btn-lg btn-danger">Hit the brakes</button>');
+	    .html('<button id="slow" class="btn btn-s btn-danger">Hit the brakes</button>');
 	
 	$("#slow").on("click",function(){
 		Slow();
