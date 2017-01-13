@@ -1,11 +1,11 @@
 (function(){
 
-    function Slow(){
-      d3.selectAll(".highlighted").data()[0].slowClick();
-    }
-
-    function Set(){
-
+	// Brakes function	
+	function Slow(){
+      	d3.selectAll(".highlighted").data()[0].slowClick();
+    	}
+	// Reset function	
+    	function Set(){
     	cars.forEach(function(d,i){
 	    		var x = Math.round(i/numCars * numPatches); 
 		    	d.x = x;
@@ -14,9 +14,9 @@
 		    	d.gap = numPatches / numCars;
 		    	d.slow = false;
     	})
-    }
-
-    $("#pause").on("click",function(){
+}
+	// Pause button press
+    	$("#pause").on("click",function(){
 	    paused = !paused;
 
     	if(!paused){
@@ -31,13 +31,11 @@
     		$(this).html("Play");
     	};
   		
-  		// $(this).toggleClass("btn-warning");
+  		$(this).toggleClass("btn-warning");
   		$(this).toggleClass("btn-success");
-
-    });
-
-    $("#reset").on("click",Set);
-
+    	});
+	// Reset button press
+    	$("#reset").on("click",Set);
 
 //===============PARAMETERS===================
 var margin = {top: 0, right: 20, bottom: 0, left: 20},
