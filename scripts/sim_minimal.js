@@ -1,5 +1,4 @@
 (function(){
-
 	// Brakes function	
 	function Slow(){
       	d3.selectAll(".highlighted").data()[0].slowClick();
