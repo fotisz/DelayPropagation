@@ -190,82 +190,76 @@ var legendData = [
 var legend = svg.selectAll(".legend")
 	.data(legendData)
 	.enter().append("g")
-.attr("class", "legend")
-	    .attr("transform", function(d, i) { return "translate(" +width + "," + i * 25 + ")"; });
+	.attr("class", "legend")
+	.attr("transform", function(d, i) { return "translate(" +width + "," + i * 25 + ")"; });
 
-	legend.append("rect")
-	    .attr("x", - 18)
-	    .attr("width", 18)
-	    .attr("stroke","black")
-	    .attr("height", 18)
-	    .style("fill", function(d){ return d.color; });
+legend.append("rect")
+	.attr("x", - 18)
+	.attr("width", 18)
+	.attr("height", 18)
+	.style("fill", function(d){ return d.color; });
 
-	legend.append("text")
-	    .attr("x", - 24)
-	    .attr("y", 9)
-	    .attr("dy", ".35em")
-	    .style("text-anchor", "end")
-	    .text(function(d) { return d.name; });
+legend.append("text")
+	.attr("x", - 24)
+	.attr("y", 9)
+	.attr("dy", ".20em")
+	.style("text-anchor", "end")
+	.text(function(d) { return d.name; });
 
-	var carOne = svg.append("g")
-		.attr("class","legend")
-		.attr("transform", "translate(" + (width - 42) + "," + 50 + ")")
+var carOne = svg.append("g")
+	.attr("class","legend")
+	.attr("transform", "translate(" + (width - 42) + "," + 50 + ")")
+	carOne.append("g").call(sticker)
+	.attr({
+		transform: "scale(0.4)",
+		fill: "#2980b9",
+		});
 
-		carOne.append("g").call(sticker)
-		.attr({
-				transform: "scale(0.7)",
-				fill: "#2980b9",
-				stroke: 'black'
-			});
+carOne.append("text")
+	.attr("x", -6)
+	.attr("y", 9)
+	.attr("dy", ".35em")
+	.style("text-anchor", "end")
+	.text("slower");
 
-	carOne.append("text")
-	    .attr("x", -6)
-	    .attr("y", 9)
-	    .attr("dy", ".35em")
-	    .style("text-anchor", "end")
-	    .text("slower");
-
-  var carTwo = svg.append("g")
+var carTwo = svg.append("g")
   	.attr("class","legend")
   	.attr("transform", "translate(" + (width - 42) + "," + 75+ ")")
-
   	carTwo.append("g").call(sticker)
   	.attr({
-  			transform: "scale(0.7)",
-  			fill: "#ecf0f1",
-  			stroke: 'black'
+		transform: "scale(0.4)",
+		fill: "#ecf0f1",
   		});
 
-  carTwo.append("text")
+carTwo.append("text")
       .attr("x", -6)
       .attr("y", 9)
       .attr("dy", ".35em")
       .style("text-anchor", "end")
       .text("faster");
 
+//=============SET UP ARRAYS===============
 
-	//=============SET UP ARRAYS===============
+var	cars = d3.range(numCars).map(function(d,i){
+	var x = Math.round(i/numCars * numPatches); 
+	return new Car(x, i);
+	});
 
-	var	cars = d3.range(numCars).map(function(d,i){
-			var x = Math.round(i/numCars * numPatches); 
-			return new Car(x, i);
-		});
+//=============DRAW THE CARS===============
 
-	//=============DRAW THE CARS===============
+var gCar = road.append("g")
+	.attr('class', 'g-cars')
+	.attr("transform","translate(" + center.x + "," + center.y + ")" );
 
-	var gCar = road.append("g")
-			.attr('class', 'g-cars')
-			.attr("transform","translate(" + center.x + "," + center.y + ")" );
-
-	var car = gCar.selectAll('cars')
-		.data(cars)
-			.enter()
-		.append('g')
-			.attr({
-				class: function(d,i){
-					return "car " + d.index.toString();
-				},
-				transform: function(d){
+var car = gCar.selectAll('cars')
+	.data(cars)
+	.enter()
+	.append('g')
+	.attr({
+	class: function(d,i){
+		return "car " + d.index.toString();
+		},
+		transform: function(d){
 					return "rotate(" + -d.x / numPatches * 360 + ")";
 				}
 			})
