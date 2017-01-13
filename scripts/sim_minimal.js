@@ -1,4 +1,5 @@
 (function(){
+	
 	/* Brakes function */	
 	function Slow(){
       	d3.selectAll(".highlighted").data()[0].slowClick();
@@ -12,8 +13,8 @@
 		    	d.a = 0;
 		    	d.gap = numPatches / numCars;
 		    	d.slow = false;
-    	})
-}
+    			})
+	}
 	/* Pause button press */
     	$("#pause").on("click",function(){
 	    paused = !paused;
@@ -30,13 +31,14 @@
     		$(this).html("Play");
     	};
   		
-  		// $(this).toggleClass("btn-warning");
+  		// $(this).toggleClass("btn-warning");	/* Green Play button */
   		$(this).toggleClass("btn-success");
     	});
 	/* Reset button press */
     	$("#reset").on("click",Set);
 
 //===============PARAMETERS===================
+	
 var margin = {top: 0, right: 20, bottom: 0, left: 20},
     width = 400 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
@@ -60,44 +62,47 @@ var numCars = 20,
 
 //=============DRAWING HELPERS===============
 
-	var format = d3.round(2);
+var format = d3.round(2);
 
-	var tooltip = d3.select("body").append("div")   
-	    .attr("class", "tooltip")               
-	    .style("opacity", 0);
+var tooltip = d3.select("body").append("div")
+	.attr("class", "tooltip")               
+	.style("opacity", 0);
 
-	var color = d3.scale.pow().exponent(0.8)
-	    .domain([0,vo*0.7]) //domain of input data 1 to 38
-		.range(["#2980b9", "#ecf0f1"])  //the color range
-	    .interpolate(d3.interpolateHcl);
+/* Color coded (blue) velocity interpolation for trains */
+var color = d3.scale.pow().exponent(0.8)
+	.domain([0,vo*0.7]) 			//domain of input data 1 to 38
+	.range(["#2980b9", "#ecf0f1"])  	//the color range
+	.interpolate(d3.interpolateHcl);
+	
+/* Color coded (green) acceleration interpolation for trains */
+var posColorAcc = d3.scale.pow().exponent(0.4)
+	.domain([0,1])
+	.range(["#ddd", "#2ecc71"])  		//the color range
+	.interpolate(d3.interpolateRgb);
 
-  var posColorAcc = d3.scale.pow().exponent(0.4)
-  		.domain([0,1])
-      .range(["#ddd", "#2ecc71"])  //the color range
-      .interpolate(d3.interpolateRgb);
+/* Color coded (red) deceleration interpolation for trains */
+var negColorAcc = d3.scale.pow().exponent(0.4)
+	.domain([-3,0])
+	.range(["#e74c3c","#ddd"])  		//the color range
+	.interpolate(d3.interpolateRgb);
 
-  var negColorAcc = d3.scale.pow().exponent(0.4)
-  		.domain([-3,0])
-      .range(["#e74c3c","#ddd"])  //the color range
-      .interpolate(d3.interpolateRgb);
+var colorAcc = function(val){
+	return (val > 0) ?  posColorAcc(val) : negColorAcc(val);
+  	}
 
-  var colorAcc = function(val){
-  	return (val > 0) ?  posColorAcc(val) : negColorAcc(val);
-  }
-
-  var toRads = 2*Math.PI;
+var toRads = 2*Math.PI;
       
-  var y = d3.scale.linear()
-  		.domain([-7,1.5])
-  		.range([0,radius + 45]) //neg and positive position
-  		.clamp(true);
+var y = d3.scale.linear()
+	.domain([-7,1.5])
+	.range([0,radius + 45]) 		/* acceleration and deceleration */
+	.clamp(true);
 
-  var offset = 25;    	//centralize icon
+var offset = 25;    				/* train icon position */
 
-  var interiorGap = 25; //gap between neg and positive
+var interiorGap = 30; 				/* acceleration and deceleration distance */
 
-  var roadMaker = d3.svg.arc()
-  	.innerRadius(radius-15)
+var roadMaker = d3.svg.arc()
+	.innerRadius(radius-15)			/* road width */
   	.outerRadius(radius+15)
   	.startAngle(0)
   	.endAngle(2*Math.PI);
