@@ -1,9 +1,9 @@
 (function(){
-	// Brakes function	
+	/* Brakes function */	
 	function Slow(){
       	d3.selectAll(".highlighted").data()[0].slowClick();
     	}
-	// Reset function	
+	/* Reset function */	
     	function Set(){
     	cars.forEach(function(d,i){
 	    		var x = Math.round(i/numCars * numPatches); 
@@ -14,7 +14,7 @@
 		    	d.slow = false;
     	})
 }
-	// Pause button press
+	/* Pause button press */
     	$("#pause").on("click",function(){
 	    paused = !paused;
 
@@ -30,10 +30,10 @@
     		$(this).html("Play");
     	};
   		
-  		$(this).toggleClass("btn-warning");
+  		// $(this).toggleClass("btn-warning");
   		$(this).toggleClass("btn-success");
     	});
-	// Reset button press
+	/* Reset button press */
     	$("#reset").on("click",Set);
 
 //===============PARAMETERS===================
