@@ -291,7 +291,6 @@ var car = gCar.selectAll('cars')
 			        .style("opacity", 0);   
 			});
 
-
 	var carArcInner = car.append('path')
 		.attr({
 			"d": arcInner,
@@ -302,7 +301,6 @@ var car = gCar.selectAll('cars')
 			fill: function(d,i){return (i>0) ? "#ecf0f1": "#e74c3c"},
 			opacity: function(d,i){return (i>0) ? .05: .4},
 		})
-
 
 	car.append('g')
 		.call(sticker)
@@ -322,8 +320,6 @@ var car = gCar.selectAll('cars')
 			// stroke: "#666"
 		});
 
-
-
 //=============GET IT GOING===============
 
 // setInterval(redraw, dur);
@@ -341,10 +337,7 @@ d3.timer(function(elapsed) {
   return paused;
 });
 
-
 //=============FUNCTIONS===============
-
-
 
 function redraw(){
 	
@@ -355,7 +348,6 @@ function redraw(){
 	cars.forEach(function(d){
 		d.update();
 	});
-
 
 	carArc.attr("d",arc);
 
@@ -369,7 +361,6 @@ function redraw(){
 		.attr("fill", function(d) { return color(d.v); });
 
 	carArc.attr("fill", function(d) { return colorAcc(d.a); });
-
 }
 
 
@@ -382,9 +373,7 @@ function Car(xo, index){
 	this.v = startV;
 	this.a = 0;
 	this.gap = numPatches / numCars;
-
 	this.slow = false;
-
 	this.getS = function(x){
 		var n = cars[(index+1)%numCars];
 		var g = (n.x > x) ? (n.x - x) : (n.x - x + numPatches);
@@ -393,7 +382,6 @@ function Car(xo, index){
 		this.gap = (p.x < x) ? (x - p.x) : (x - p.x + numPatches);
 		return g - L;
 	};
-
 	this.update = function(){
 
 		var a = this.a,
@@ -412,15 +400,11 @@ function Car(xo, index){
 			this.x = n.x- L - sMin;
 			this.v = 0;
 		}
-
-
 	}
-
 	this.slowClick = function(){
 		this.slow = d3.range(15);
 		// this.slow =  true;
 	}
-
 	this.choose = function(){
 		var n = cars[(index+1)%numCars];
 		var v = this.v,
@@ -444,5 +428,4 @@ function Car(xo, index){
 	};
 
 }
-
 })()
