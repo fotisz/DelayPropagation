@@ -140,48 +140,46 @@ var arcInner = d3.svg.arc()
 
 var sticker = d3.sticker("#car");
 
-	var svg = d3.select("#main")
-		.append("svg")
-	    .attr("width", width + margin.left + margin.right)
-	    .attr("height", height + margin.top + margin.bottom)
-	  .append("g")
-	    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var svg = d3.select("#main")
+	.append("svg")
+	.attr("width", width + margin.left + margin.right)
+	.attr("height", height + margin.top + margin.bottom)
+	.append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-	var road = svg.append("g")
-			.attr("class","road");
-
-
+var road = svg.append("g")
+	.attr("class","road");
 	road.append('path')
-			.attr({
-				d: roadMaker,
-				fill: "#293038",
-				transform: "translate(" + center.x + "," + center.y + ")"
-			});
+	.attr({
+		d: roadMaker,
+		fill: "#293038",
+		transform: "translate(" + center.x + "," + center.y + ")"
+	});
 
-	var slowScale = d3.scale.linear().domain([0,50]).range([6,1]).clamp(true)
+var slowScale = d3.scale.linear().domain([0,50]).range([6,1]).clamp(true)
 
-	road.on('mousemove', function(){
-				var xi = d3.mouse(this)[0] - center.x ;
-				var yi = d3.mouse(this)[1] - center.y ;
-				var s = Math.pow(Math.pow(xi,2) + Math.pow(yi,2),0.5) - radius;
-				dur = durPerm * slowScale(Math.abs(s))
+road.on('mousemove', function(){
+		var xi = d3.mouse(this)[0] - center.x ;
+		var yi = d3.mouse(this)[1] - center.y ;
+		var s = Math.pow(Math.pow(xi,2) + Math.pow(yi,2),0.5) - radius;
+		dur = durPerm * slowScale(Math.abs(s))
 			})
-			.on('mouseout', function(){
-				dur = durPerm
+		.on('mouseout', function(){
+			dur = durPerm
 		});
 
-	road.append("foreignObject")
-	    .attr("transform","translate(" + (center.x + - 150/2) +  "," + ( center.y +  - 45/2) + ")" )
-	    .attr("width", 200)
-	    .attr("height", 200)
-	  .append("xhtml:div")
-	    .html('<button id="slow" class="btn btn-sm btn-danger">Hit the brakes</button>');
+road.append("foreignObject")
+	.attr("transform","translate(" + (center.x + - 150/2) +  "," + ( center.y +  - 50/2) + ")" )
+	.attr("width", 200)
+	.attr("height", 200)
+	.append("xhtml:div")
+	.html('<button id="slow" class="btn btn-sm btn-danger">Hit the brakes</button>');
 	
 	$("#slow").on("click",function(){
 		Slow();
 	})
 
-	//=============DRAW LEGEND===============
+//=============DRAW LEGEND===============
 // ["#e74c3c", "#2ecc71"]
 	var legendData = [
 		{name: "deceleration (braking)", color: "#e74c3c", type: "rect"},
