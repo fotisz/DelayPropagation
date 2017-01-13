@@ -107,37 +107,38 @@ var roadMaker = d3.svg.arc()
   	.startAngle(0)
   	.endAngle(2*Math.PI);
 
-  var arc = d3.svg.arc()
-      .innerRadius(function(d){
+/* Deceleration */	
+var arc = d3.svg.arc()
+      	.innerRadius(function(d){
       	if(0 > d.a) return y(d.a) - interiorGap;
       	return y(0);
-      })
-      .outerRadius(function(d){
+      	})
+      	.outerRadius(function(d){
       	if(d.a > 0) return y(d.a);
       	return y(0) - interiorGap;
-      })
-      .startAngle(function(d){
+      	})
+      	.startAngle(function(d){
       	// return 0;
       	return (-0.5*(d.gap + offset)/numPatches*0.8 + .005) * toRads;
-      })
-      .endAngle(function(d){
+      	})
+      	.endAngle(function(d){
       	return (0.5*(d.gap - offset)/numPatches*0.8 - 0.005) * toRads;
-      });
+      	});
 
-  var arcInner = d3.svg.arc()
+/* Acceleration */
+var arcInner = d3.svg.arc()
       .innerRadius(radius - 30)
       .outerRadius(radius + 30)
       .startAngle(function(d){
-      	return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.002) * toRads;
+      return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.002) * toRads;
       })
       .endAngle(function(d){
-      	return (0.5*(d.gap - offset)/numPatches*0.8 - 0.002) * toRads;
+      return (0.5*(d.gap - offset)/numPatches*0.8 - 0.002) * toRads;
       });
-
 
 //=============DRAW SVG AND ROAD===============
 
-	var sticker = d3.sticker("#car");
+var sticker = d3.sticker("#car");
 
 	var svg = d3.select("#main")
 		.append("svg")
