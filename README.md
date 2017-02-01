@@ -11,7 +11,7 @@ Contrary to popular belief, much of the congestion expressed as drops in the pub
 
 Task List 
 ---
-- [ ] Multiple Simulations - Multiple Controls
+- [ ] Multiple Simulations - Multiple Controls -- fix hit the brakes issue 
 - [ ] Multiple Simulations - Single Control
 - [ ] #car -> #train
 - [ ] #road -> #line
