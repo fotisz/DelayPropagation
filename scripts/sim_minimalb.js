@@ -295,7 +295,7 @@ var car = gCar.selectAll('cars')
 		.attr({
 			"d": arcInner,
 			class: function(d,i){
-				var extra = (i == 0) ? " highlighted" : "";
+				var extra = (i == 0) ? " highlightedb" : "";
 				return "car-arc-inner" + extra;
 			},
 			fill: function(d,i){return (i>0) ? "#ecf0f1": "#e74c3c"},
