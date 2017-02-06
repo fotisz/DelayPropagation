@@ -38,7 +38,7 @@
 	
 var margin = {top: 0, right: 20, bottom: 0, left: 20},
     width = 400 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom,
+    height = 300 - margin.top - margin.bottom,
     radius = (width-100)/2,
     center = {x: width/2, y: height/2},
     durPerm = 45,
