@@ -30,9 +30,6 @@
     	}else{
     		$(this).html("Play");
     	};
-  		
-  		// $(this).toggleClass("btn-warning");	/* Green Play button */
-  		$(this).toggleClass("btn-success");
     	});
 	/* Reset button press */
     	$("#reset").on("click",Set);
