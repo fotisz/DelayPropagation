@@ -2,7 +2,7 @@
 	
 	/* Brakes function */	
 	function Slow(){
-      	d3.selectAll(".highlighted").data()[0].slowClick();
+      	d3.selectAll(".highlightedb").data()[0].slowClick();
     	}
 	/* Reset function */	
     	function Set(){
@@ -264,12 +264,12 @@ var car = gCar.selectAll('cars')
 				}
 			})
 			.on("click", function(d){
-				d3.select(".highlighted").classed("highlighted", false)
+				d3.select(".highlightedb").classed("highlightedb", false)
 					.attr('opacity',0.05)
 					.attr("fill","#ecf0f1");
 
 				d3.select(this).select(".car-arc-inner")
-					.classed("highlighted", true)
+					.classed("highlightedb", true)
 					.attr("fill", "#e74c3c")
 					.attr("opacity",0.4);
 
