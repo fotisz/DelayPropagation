@@ -172,8 +172,7 @@ road.append("foreignObject")
 	.attr("transform","translate(" + (center.x + - 100/2) +  "," + ( center.y +  - 45/2) + ")" )
 	.attr("width", 200)
 	.attr("height", 200)
-	.append("xhtml:div")
-	.html('<button id="slow" class="btn btn-sm btn-danger">Hit the brakes</button>');
+	.append("xhtml:div");
 	
 	$("#slow").on("click",function(){
 		Slow();
