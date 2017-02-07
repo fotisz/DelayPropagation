@@ -137,7 +137,7 @@ var arcInner = d3.svg.arc()
 
 var sticker = d3.sticker("#car");
 
-var svg = d3.select("#mainb")
+var svg = d3.select("#mainc")
 	.append("svg")
 	.attr("width", width + margin.left + margin.right)
 	.attr("height", height + margin.top + margin.bottom)
