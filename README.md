@@ -20,4 +20,4 @@ Task List
 Hit the brakes issue
 ---
 class: car-arc, g-sticker, car-arc-inner
-path generation and 
+path generation and rotate() fail
