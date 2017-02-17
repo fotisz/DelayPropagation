@@ -175,65 +175,6 @@ road.append("foreignObject")
 		Slow();
 	})
 
-//=============DRAW LEGEND===============
-	
-// ["#e74c3c", "#2ecc71"]
-var legendData = [
-	{name: "deceleration (braking)", color: "#e74c3c", type: "rect"},
-	{name: "acceleration (speeding up)", color: "#2ecc71", type: "rect"}
-]
-
-var legend = svg.selectAll(".legend")
-	.data(legendData)
-	.enter().append("g")
-	.attr("class", "legend")
-	.attr("transform", function(d, i) { return "translate(" +width + "," + i * 25 + ")"; });
-
-legend.append("rect")
-	.attr("x", - 18)
-	.attr("width", 18)
-	.attr("height", 18)
-	.style("fill", function(d){ return d.color; });
-
-legend.append("text")
-	.attr("x", - 24)
-	.attr("y", 9)
-	.attr("dy", ".20em")
-	.style("text-anchor", "end")
-	.text(function(d) { return d.name; });
-
-var carOne = svg.append("g")
-	.attr("class","legend")
-	.attr("transform", "translate(" + (width - 42) + "," + 50 + ")")
-	carOne.append("g").call(sticker)
-	.attr({
-		transform: "scale(0.4)",
-		fill: "#2980b9",
-		});
-
-carOne.append("text")
-	.attr("x", -6)
-	.attr("y", 9)
-	.attr("dy", ".35em")
-	.style("text-anchor", "end")
-	.text("slower");
-
-var carTwo = svg.append("g")
-  	.attr("class","legend")
-  	.attr("transform", "translate(" + (width - 42) + "," + 75+ ")")
-  	carTwo.append("g").call(sticker)
-  	.attr({
-		transform: "scale(0.4)",
-		fill: "#ecf0f1",
-  		});
-
-carTwo.append("text")
-      .attr("x", -6)
-      .attr("y", 9)
-      .attr("dy", ".35em")
-      .style("text-anchor", "end")
-      .text("faster");
-
 //=============SET UP ARRAYS===============
 
 var	cars = d3.range(numCars).map(function(d,i){
