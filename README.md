@@ -21,3 +21,9 @@ Hit the brakes issue
 ---
 class: car-arc, g-sticker, car-arc-inner
 path generation and rotate() fail
+
+Delays explained
+---
+**Network Rail:** https://www.networkrail.co.uk/running-the-railway/looking-after-the-railway/delays-explained/
+**National Rail Enquiries:** http://www.nationalrail.co.uk/service_disruptions/80810.aspx
+**Public Performance Measure:** https://www.networkrail.co.uk/who-we-are/how-we-work/performance/
