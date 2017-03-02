@@ -29,3 +29,14 @@ Delays explained
 **National Rail Enquiries:** http://www.nationalrail.co.uk/service_disruptions/80810.aspx
 
 **Public Performance Measure:** https://www.networkrail.co.uk/who-we-are/how-we-work/performance/
+
+Digital Railway Program
+---
+
+Digital Railway is the proposal for the UK to adopt modern digital signalling and train control within the next 25 years and create credible options to upgrade the railway to next generation technology as it becomes available.
+
+Conventional upgrades to the network are vital. But they can’t deliver the major increase in capacity the UK needs without costing too much, disrupting too much, and taking too long. This capacity can only come from making the infrastructure we already have more productive, which is what proven digital technology does.
+
+By using in-train signalling (called the European Train Control System) and traffic management systems which optimise the speed and movements of trains on the network,  they can be run closer together without supervision. 
+
+:bullettrain_front:
