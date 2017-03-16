@@ -94,7 +94,7 @@ var toRads = 2*Math.PI;
       
 var y = d3.scale.linear()
 	.domain([-7,1.5])
-	.range([0,radius + 50]) 		/* acceleration and deceleration */
+	.range([0,radius + 55]) 		/* acceleration and deceleration */
 	.clamp(true);
 
 var offset = 30;    				/* train icon position */
