@@ -99,7 +99,7 @@ var y = d3.scale.linear()
 
 var offset = 30;    				/* train icon position */
 
-var interiorGap = 40; 				/* acceleration and deceleration distance */
+var interiorGap = 45; 				/* acceleration and deceleration distance */
 
 var roadMaker = d3.svg.arc()
 	.innerRadius(radius-20)			/* road width */
