@@ -102,8 +102,8 @@ var offset = 30;    				/* train icon position */
 var interiorGap = 35; 				/* acceleration and deceleration distance */
 
 var roadMaker = d3.svg.arc()
-	.innerRadius(radius-15)			/* road width */
-  	.outerRadius(radius+15)
+	.innerRadius(radius-20)			/* road width */
+  	.outerRadius(radius+20)
   	.startAngle(0)
   	.endAngle(2*Math.PI);
 
