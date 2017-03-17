@@ -91,16 +91,16 @@ var toRads = 2*Math.PI;
       
 var y = d3.scale.linear()
 	.domain([-7,1.5])
-	.range([0,radius + 45]) 		/* acceleration and deceleration */
+	.range([0,radius + 55]) 		/* acceleration and deceleration */
 	.clamp(true);
 
-var offset = 25;    				/* train icon position */
+var offset = 40;    				/* train icon position */
 
-var interiorGap = 30; 				/* acceleration and deceleration distance */
+var interiorGap = 45; 				/* acceleration and deceleration distance */
 
 var roadMaker = d3.svg.arc()
-	.innerRadius(radius-15)			/* road width */
-  	.outerRadius(radius+15)
+	.innerRadius(radius-20)			/* road width */
+  	.outerRadius(radius+20)
   	.startAngle(0)
   	.endAngle(2*Math.PI);
 
@@ -243,7 +243,7 @@ var car = gCar.selectAll('cars')
 		.call(sticker)
 			.attr({
 				class: "g-sticker",
-				transform: "translate(0," + (-radius + 10 ) +") scale(.4, 0.4) rotate(180)", /* train icon position */
+				transform: "translate(0," + (-radius + 15 ) +") scale(.7, 0.7) rotate(180)", /* train icon position */
 				fill: function(d,i){ return color(d.v); },
 			});
 
