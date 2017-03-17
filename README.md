@@ -21,6 +21,7 @@ Hit the brakes issue
 ---
 class: car-arc, g-sticker, car-arc-inner
 path generation and rotate() fail
+vars: arc, arcInner
 
 Delays explained
 ---
