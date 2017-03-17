@@ -15,6 +15,7 @@
 		    	d.slow = false;
     			})
 	}
+	
 	/* Pause button press */
     	$("#pause").on("click",function(){
 	    paused = !paused;
@@ -34,6 +35,7 @@
   		// $(this).toggleClass("btn-warning");	/* Green Play button */
   		$(this).toggleClass("btn-success");
     	});
+	
 	/* Reset button press */
     	$("#reset").on("click",Set);
 
@@ -97,7 +99,7 @@ var y = d3.scale.linear()
 	.range([0,radius + 55]) 		/* acceleration and deceleration */
 	.clamp(true);
 
-var offset = 25;    				/* train icon position */
+var offset = 35;    				/* train icon position */
 
 var interiorGap = 45; 				/* acceleration and deceleration distance */
 
@@ -177,10 +179,7 @@ road.append("foreignObject")
 	$("#slow").on("click",function(){
 		Slow();
 	})
-
-//=============DRAW LEGEND===============
 	
-
 //=============SET UP ARRAYS===============
 
 var	cars = d3.range(numCars).map(function(d,i){
@@ -249,7 +248,7 @@ var car = gCar.selectAll('cars')
 		.call(sticker)
 			.attr({
 				class: "g-sticker",
-				transform: "translate(0," + (-radius + 10 ) +") scale(.7, 0.7) rotate(180)", /* train icon */
+				transform: "translate(0," + (-radius + 15 ) +") scale(.7, 0.7) rotate(180)", /* train icon */
 				fill: function(d,i){ return color(d.v); },
 			});
 
