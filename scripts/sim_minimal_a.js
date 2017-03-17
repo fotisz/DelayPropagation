@@ -97,7 +97,7 @@ var y = d3.scale.linear()
 	.range([0,radius + 55]) 		/* acceleration and deceleration */
 	.clamp(true);
 
-var offset = 30;    				/* train icon position */
+var offset = 25;    				/* train icon position */
 
 var interiorGap = 45; 				/* acceleration and deceleration distance */
 
