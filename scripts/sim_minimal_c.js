@@ -124,8 +124,8 @@ var arc = d3.svg.arc()
 
 /* Acceleration */
 var arcInner = d3.svg.arc()
-      .innerRadius(radius - 30)
-      .outerRadius(radius + 30)
+      .innerRadius(radius - 20)
+      .outerRadius(radius + 20)
       .startAngle(function(d){
       return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.002) * toRads;
       })
