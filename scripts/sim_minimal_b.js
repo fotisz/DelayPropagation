@@ -91,16 +91,16 @@ var toRads = 2*Math.PI;
       
 var y = d3.scale.linear()
 	.domain([-7,1.5])
-	.range([0,radius + 45]) 		/* acceleration and deceleration */
+	.range([0,radius + 55]) 		/* acceleration and deceleration */
 	.clamp(true);
 
-var offset = 25;    				/* train icon position */
+var offset = 40;    				/* train icon position */
 
-var interiorGap = 30; 				/* acceleration and deceleration distance */
+var interiorGap = 45; 				/* acceleration and deceleration distance */
 
 var roadMaker = d3.svg.arc()
-	.innerRadius(radius-15)			/* road width */
-  	.outerRadius(radius+15)
+	.innerRadius(radius-20)			/* road width */
+  	.outerRadius(radius+20)
   	.startAngle(0)
   	.endAngle(2*Math.PI);
 
@@ -127,10 +127,10 @@ var arcInner = d3.svg.arc()
       .innerRadius(radius - 30)
       .outerRadius(radius + 30)
       .startAngle(function(d){
-      return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.002) * toRads;
+      return (-0.5*(d.gap + offset)/numPatches*0.8 + 0.005) * toRads;
       })
       .endAngle(function(d){
-      return (0.5*(d.gap - offset)/numPatches*0.8 - 0.002) * toRads;
+      return (0.5*(d.gap - offset)/numPatches*0.8 - 0.005) * toRads;
       });
 
 //=============DRAW SVG AND ROAD===============
