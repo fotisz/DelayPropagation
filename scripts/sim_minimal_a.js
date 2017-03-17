@@ -249,7 +249,7 @@ var car = gCar.selectAll('cars')
 		.call(sticker)
 			.attr({
 				class: "g-sticker",
-				transform: "translate(0," + (-radius + 10 ) +") scale(.6, 0.6) rotate(180)", /* train icon */
+				transform: "translate(0," + (-radius + 10 ) +") scale(.7, 0.7) rotate(180)", /* train icon */
 				fill: function(d,i){ return color(d.v); },
 			});
 
