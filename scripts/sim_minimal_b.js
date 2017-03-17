@@ -15,6 +15,7 @@
 		    	d.slow = false;
     			})
 	}
+	
 	/* Pause button press */
     	$("#pause").on("click",function(){
 	    paused = !paused;
@@ -166,7 +167,7 @@ road.on('mousemove', function(){
 		});
 
 road.append("foreignObject")
-	.attr("transform","translate(" + (center.x + - 100/2) +  "," + ( center.y +  - 45/2) + ")" )
+	.attr("transform","translate(" + (center.x + - 150/2) +  "," + ( center.y +  - 45/2) + ")" )
 	.attr("width", 200)
 	.attr("height", 200)
 	.append("xhtml:div")
