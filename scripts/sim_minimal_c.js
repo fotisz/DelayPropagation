@@ -44,7 +44,7 @@ var margin = {top: 0, right: 20, bottom: 0, left: 20},
     durPerm = 45,
     dur = 45;
 
-var numCars = 25,
+var numCars = 21,
     tPerm = 0.5,
     t = .5,
     numPatches = 1000,
