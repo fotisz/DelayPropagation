@@ -2,7 +2,7 @@
 
 var sticker = d3.sticker("#car");
 
-var numCars = 8,
+var numCars = 20,
   t = .5,
   numPatches = 500,
   timeScale = 100;
