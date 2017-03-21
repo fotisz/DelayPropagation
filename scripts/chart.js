@@ -2,16 +2,16 @@
 
 var sticker = d3.sticker("#car");
 
-var numCars = 20,
+var numCars = 15,
   t = .5,
   numPatches = 500,
   timeScale = 100;
 
-//parameters of driving
+// Driving Parameters
 var vo = 40,
-  vd = vo*0.7,
-  lag = 4,
-  c = 0.36;
+    vd = vo*0.7,
+    lag = 4,
+    c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
     var x = i*170;
@@ -20,7 +20,6 @@ var cars = d3.range(numCars).map(function(d,i){
 
 var l = cars[cars.length -1];
 var whenItStarts = 10;
-
 var which = 0;
 
 calc();
@@ -83,7 +82,6 @@ function calc(){
 
 }
 
-
 function Chart(measure){
   var labels = {s: "headway", v: "speed", a: "acceleration"}
 
@@ -114,7 +112,7 @@ function Chart(measure){
   var svg = d3.select("#velocity").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-    .append("g")
+      .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   x.domain([0, timeScale])
@@ -134,7 +132,7 @@ function Chart(measure){
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
-    .append("text")
+      .append("text")
       // .attr("transform", "rotate(-91)")
       // .attr("y", 10)
       .attr("dy", "-.5em")
@@ -146,7 +144,7 @@ function Chart(measure){
   svg.append("g")
       .attr("class", "y axis")
       .call(yAxis)
-    .append("text")
+      .append("text")
       // .attr("transform", "rotate(-91)")
       .attr("y", 10)
       // .attr("dy", ".71em")
@@ -157,7 +155,7 @@ function Chart(measure){
 
   var gCar = svg.selectAll(".g-car")
       .data(cars)
-    .enter().append("g")
+      .enter().append("g")
       .attr("class", "g-car");
 
   gCar.append("path")
@@ -250,10 +248,9 @@ function Road(){
 
     function redraw(event, newWhich){
       which = newWhich;
-
-
+      
       car.attr("transform",function(d){ 
-        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.4, 0.4) rotate(0)";
+        return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.7, 0.7) rotate(0)";
       });
 
       changeDots(which);
