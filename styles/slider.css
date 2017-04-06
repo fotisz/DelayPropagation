@@ -1,7 +1,7 @@
 .d3-slider {
     position: relative;
-    font-family: Verdana,Arial,sans-serif;
-    font-size: 1.1em;
+    font-family: sans-serif;
+    font-size: 0.8em;
     border: 1px solid #aaaaaa;
     z-index: 2;
 }
