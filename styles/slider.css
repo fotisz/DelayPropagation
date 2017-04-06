@@ -42,7 +42,7 @@
 }
 
 .d3-slider-axis-bottom {
-    top: .4em;
+    top: .6em;
 }
 
 .d3-slider-axis-right {
@@ -55,7 +55,7 @@
 }
 
 .d3-slider-axis text {
-    font-size: 8px;
+    font-size: 9px;
 }
 
 .d3-slider-vertical .d3-slider-handle {
