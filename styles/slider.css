@@ -1,7 +1,7 @@
 .d3-slider {
     position: relative;
     font-family: sans-serif;
-    font-size: 0.5em;
+    font-size: 0.8em;
     border: 1px solid #999;
     border-radius: 10px;
     background: #ddd;
@@ -56,7 +56,7 @@
 }
 
 .d3-slider-axis text {
-    font-size: 11px;
+    font-size: 8px;
 }
 
 .d3-slider-vertical .d3-slider-handle {
