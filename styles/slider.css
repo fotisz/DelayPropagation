@@ -19,12 +19,11 @@
 
 .d3-slider-handle {
     position: absolute;
-    width: 1.2em;
-    height: 1.2em;
-    border: 1px solid #d3d3d3;
-    border-radius: 4px;
+    width: 1.3em;
+    height: 1.3em;
+    border: 1px solid #999;
+    border-radius: 10px;
     background: #eee;
-    background: linear-gradient(to bottom, #eee 0%, #ddd 100%);
     z-index: 3;
 }
 
