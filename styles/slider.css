@@ -53,12 +53,6 @@
     fill: none;
 }
 
-.d3-slider-axis line {
-    fill: none;
-    stroke: #aaa;
-    shape-rendering: crispEdges;
-}
-
 .d3-slider-axis text {
     font-size: 11px;
 }
