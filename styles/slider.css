@@ -2,7 +2,9 @@
     position: relative;
     font-family: sans-serif;
     font-size: 0.8em;
-    border: 1px solid #aaaaaa;
+    border: 1px solid #999;
+    border-radius: 10px;
+    background: #ddd;
     z-index: 2;
 }
 
