@@ -10,7 +10,7 @@ var numCars = 10,         /* # of trains  */
 // Driving Parameters
 var vo = 40,              /* driving parameters */
     vd = vo*0.3,
-    lag = 4,
+    lag = 3,
     c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
@@ -86,7 +86,7 @@ function Chart(measure){
   var labels = {s: "headway", v: "speed", a: "acceleration"}
 
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
-      width = 1200 - margin.left - margin.right,
+      width = 1000 - margin.left - margin.right,
       height = 250 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -189,7 +189,7 @@ function Chart(measure){
 function Road(){
 
   var margin = {top: 0, right: 20, bottom: 10, left: 50},
-      width = 1200 - margin.left - margin.right,
+      width = 1000 - margin.left - margin.right,
       height = 50 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
