@@ -2,7 +2,7 @@
 
 var sticker = d3.sticker("#car");
 
-var numCars = 10,         /* # of trains  */
+var numCars = 8,         /* # of trains  */
     t = .5,               /* chart time scale */  
     numPatches = 500,
     timeScale = 100;
@@ -11,7 +11,7 @@ var numCars = 10,         /* # of trains  */
 var vo = 40,              /* driving parameters */
     vd = vo*0.4,
     lag = 4,
-    c = 0.31;
+    c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
     var x = i*180;
