@@ -9,7 +9,7 @@ var numCars = 10,         /* # of trains  */
 
 // Driving Parameters
 var vo = 40,              /* driving parameters */
-    vd = vo*0.3,
+    vd = vo*0.4,
     lag = 4,
     c = 0.36;
 
