@@ -10,6 +10,7 @@
 
 .d3-slider-horizontal {
     height: .8em;
+    cursor: crosshair;
 }  
 
 .d3-slider-vertical {
