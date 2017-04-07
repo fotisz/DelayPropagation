@@ -11,7 +11,7 @@ var numCars = 10,         /* # of trains  */
 var vo = 40,              /* driving parameters */
     vd = vo*0.4,
     lag = 4,
-    c = 0.36;
+    c = 0.38;
 
 var cars = d3.range(numCars).map(function(d,i){
     var x = i*180;
