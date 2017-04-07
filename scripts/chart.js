@@ -9,12 +9,12 @@ var numCars = 8,         /* # of trains  */
 
 // Driving Parameters
 var vo = 40,              /* driving parameters */
-    vd = vo*0.7,
+    vd = vo*0.4,
     lag = 4,
     c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
-    var x = i*100;
+    var x = i*170;
     return new Car(x, i);
     });
 
