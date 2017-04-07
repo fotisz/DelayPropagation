@@ -3,7 +3,7 @@
 var sticker = d3.sticker("#car");
 
 var numCars = 15,         /* # of trains  */
-    t = .05,
+    t = 5,                /* chart time scale */  
     numPatches = 500,
     timeScale = 100;
 
