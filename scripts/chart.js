@@ -86,7 +86,7 @@ function Chart(measure){
   var labels = {s: "headway", v: "speed", a: "acceleration"}
 
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
-      width = 900 - margin.left - margin.right,
+      width = 1200 - margin.left - margin.right,
       height = 250 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -189,7 +189,7 @@ function Chart(measure){
 function Road(){
 
   var margin = {top: 0, right: 20, bottom: 10, left: 50},
-      width = 600 - margin.left - margin.right,
+      width = 1200 - margin.left - margin.right,
       height = 50 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -221,20 +221,19 @@ function Road(){
       })
 
   var car = svg.append("g")
-    .selectAll('cars')
-    .data(cars)
+      .selectAll('cars')
+      .data(cars)
       .enter()
-    .append('g')
-    .call(sticker)
-    .attr({
-      class: "car",
-      fill: function(d,i){return d3.rgb(color(i)).brighter(0.5);},
-      transform: function(d){ 
+      .append('g')
+      .call(sticker)
+      .attr({
+        class: "car",
+        fill: function(d,i){return d3.rgb(color(i)).brighter(0.5);},
+        transform: function(d){ 
         return "translate(" + x(d.hist[which].x) + "," + 10 +") scale(-.4, 0.4) rotate(0)";
       }
     });
-
-
+    
     var sliderCall = d3.slider().on("slide", redraw).axis( d3.svg.axis().ticks(10) );
 
     d3.select('#slider1')
