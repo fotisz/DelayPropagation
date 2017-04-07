@@ -14,7 +14,7 @@ var vo = 40,              /* driving parameters */
     c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
-    var x = i*180;
+    var x = i*190;
     return new Car(x, i);
     });
 
