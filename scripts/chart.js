@@ -2,13 +2,13 @@
 
 var sticker = d3.sticker("#car");
 
-var numCars = 15,
-  t = .5,
-  numPatches = 500,
-  timeScale = 100;
+var numCars = 15,         /* # of trains  */
+    t = .5,
+    numPatches = 500,
+    timeScale = 100;
 
 // Driving Parameters
-var vo = 40,
+var vo = 40,              /* driving parameters */
     vd = vo*0.7,
     lag = 4,
     c = 0.36;
@@ -16,7 +16,7 @@ var vo = 40,
 var cars = d3.range(numCars).map(function(d,i){
     var x = i*170;
     return new Car(x, i);
-  });
+    });
 
 var l = cars[cars.length -1];
 var whenItStarts = 10;
@@ -50,7 +50,7 @@ function calc(){
     l.x += l.v * t;
 
     cars.slice(0, cars.length -1).forEach(function(d,i){
-        var n = cars[d.index+1],
+          var n = cars[d.index+1],
           s = n.x - d.x,
           delV = n.v - d.v,
           newA = c * delV; 
@@ -86,7 +86,7 @@ function Chart(measure){
   var labels = {s: "headway", v: "speed", a: "acceleration"}
 
   var margin = {top: 20, right: 20, bottom: 30, left: 50},
-      width = 600 - margin.left - margin.right,
+      width = 900 - margin.left - margin.right,
       height = 250 - margin.top - margin.bottom;
 
   var x = d3.scale.linear()
@@ -128,7 +128,7 @@ function Chart(measure){
 
   y.domain( [y.domain()[0]*0.9,  y.domain()[1]*1.1])
 
-  svg.append("g")
+  svg .append("g")
       .attr("class", "x axis")
       .attr("transform", "translate(0," + height + ")")
       .call(xAxis)
@@ -141,7 +141,7 @@ function Chart(measure){
       .style("text-anchor", "end")
       .text("time");
 
-  svg.append("g")
+  svg .append("g")
       .attr("class", "y axis")
       .call(yAxis)
       .append("text")
@@ -185,8 +185,7 @@ function Chart(measure){
   }; //end changedots defn
 
 }
-
-
+  
 function Road(){
 
   var margin = {top: 0, right: 20, bottom: 10, left: 50},
@@ -210,7 +209,7 @@ function Road(){
   var svg = d3.select("#road").append("svg")
       .attr("width", width + margin.left + margin.right)
       .attr("height", height + margin.top + margin.bottom)
-    .append("g")
+      .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
   var road = svg.append("rect")
