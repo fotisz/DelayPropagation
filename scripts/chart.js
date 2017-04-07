@@ -9,9 +9,9 @@ var numCars = 10,         /* # of trains  */
 
 // Driving Parameters
 var vo = 40,              /* driving parameters */
-    vd = vo*0.7,
+    vd = vo*0.3,
     lag = 4,
-    c = 0.5;
+    c = 0.36;
 
 var cars = d3.range(numCars).map(function(d,i){
     var x = i*170;
