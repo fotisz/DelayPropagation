@@ -2,10 +2,10 @@
 
 var sticker = d3.sticker("#car");
 
-var numCars = 15,         /* # of trains  */
-    t = .1,                /* chart time scale */  
+var numCars = 10,         /* # of trains  */
+    t = .5,               /* chart time scale */  
     numPatches = 500,
-    timeScale = 1000;
+    timeScale = 100;
 
 // Driving Parameters
 var vo = 40,              /* driving parameters */
