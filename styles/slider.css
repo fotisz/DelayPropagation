@@ -52,6 +52,7 @@
 
 .d3-slider-axis path {
     stroke-width: 0;
+    stroke-linecap: round;
     fill: none;
 }
 
